@@ -41,7 +41,7 @@ public enum PhoneNumber {
     
     public func validate(text: String) -> Bool {
         let digits = raw(text: text).toArray
-        let count = numbers.count
+        let count = digits.count
         
         // TODO: Add support for country codes
         // This protects against a user entering a phone number, such as 140-123-4567.
