@@ -23,7 +23,7 @@ github "BruceBC/PhoneKit"
 
 ## Usage
 
-Import PhoneNumberKit at the top of the Swift file that will interact with a phone number.
+Import PhoneKit at the top of the Swift file that will interact with a phone number.
 
 ```swift
 import PhoneKit
