@@ -15,6 +15,7 @@
 		320400D120DA12FD00C0A8D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320400CF20DA12FD00C0A8D5 /* LaunchScreen.storyboard */; };
 		320400DC20DA12FD00C0A8D5 /* PhoneKitDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320400DB20DA12FD00C0A8D5 /* PhoneKitDemoTests.swift */; };
 		320400E720DA12FD00C0A8D5 /* PhoneKitDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320400E620DA12FD00C0A8D5 /* PhoneKitDemoUITests.swift */; };
+		3204010020DA25D000C0A8D5 /* PhoneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320400FF20DA25D000C0A8D5 /* PhoneKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		320400E220DA12FD00C0A8D5 /* PhoneKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		320400E620DA12FD00C0A8D5 /* PhoneKitDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneKitDemoUITests.swift; sourceTree = "<group>"; };
 		320400E820DA12FD00C0A8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		320400FF20DA25D000C0A8D5 /* PhoneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhoneKit.framework; path = Carthage/Build/iOS/PhoneKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3204010020DA25D000C0A8D5 /* PhoneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,7 @@
 				320400DA20DA12FD00C0A8D5 /* PhoneKitDemoTests */,
 				320400E520DA12FD00C0A8D5 /* PhoneKitDemoUITests */,
 				320400C120DA12FC00C0A8D5 /* Products */,
+				320400FF20DA25D000C0A8D5 /* PhoneKit.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +142,7 @@
 				320400BC20DA12FC00C0A8D5 /* Sources */,
 				320400BD20DA12FC00C0A8D5 /* Frameworks */,
 				320400BE20DA12FC00C0A8D5 /* Resources */,
+				320400FE20DA256500C0A8D5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,6 +258,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		320400FE20DA256500C0A8D5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/PhoneKit.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PhoneKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		320400BC20DA12FC00C0A8D5 /* Sources */ = {
@@ -435,6 +458,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PhoneKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +479,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PhoneKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
