@@ -64,6 +64,12 @@ phoneNumber.validate(text: "216 123 4567") // Result: true
 phoneNumber.raw(text: "(216) 123-4567") // Result: 2161234567
 ```
 
+PhoneNumberDirection enum options
+```swift
+PhoneNumberDirection.forward // Allows user to enter text in UITextField
+PhoneNumberDirection.backward // Allows user to delete text in UITextField
+```
+
 Example (Full example can be found in PhoneKitDemo.xcodeproj)
 ```swift
 import UIKit
