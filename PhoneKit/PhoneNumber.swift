@@ -8,25 +8,25 @@
 
 import Foundation
 
-enum PhoneNumberDirection {
+public enum PhoneNumberDirection {
     case forward
     case backward
 }
 
-enum PhoneNumber {
+public enum PhoneNumber {
     case numbers
     case elegant
     case custom(String)
     
-    var numbers: [String] {
+    private var numbers: [String] {
         return "0000000000".toArray // [0,0,0,0,0,0,0,0,0,0]
     }
     
-    var elegant: [String] {
+    private var elegant: [String] {
         return "(000) 000-0000".toArray // [(,0,0,0,), ,0,0,0,-,0,0,0,0]
     }
     
-    func format(text: String, direction: PhoneNumberDirection = .forward) -> String {
+    public func format(text: String, direction: PhoneNumberDirection = .forward) -> String {
         switch self {
         case .numbers:
             let format = numbers
@@ -39,7 +39,7 @@ enum PhoneNumber {
         }
     }
     
-    func validate(text: String) -> Bool {
+    public func validate(text: String) -> Bool {
         let count = raw(text: text).toArray.count
         
         switch self {
@@ -52,7 +52,7 @@ enum PhoneNumber {
         }
     }
     
-    func raw(text: String) -> String  {
+    public func raw(text: String) -> String  {
         return text.toArray.filter { $0.isNumeric }.joined()
     }
     
